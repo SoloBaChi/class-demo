@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,inital-scale=1.0">
+	<title>Responsive</title>
+	<style>
+		html{
+		box-sizing:border-box;
+		}
+		*,
+		*::before,
+		*::after{
+		box-sizing:inherit;
+		padding:0;
+		margin:0;
+		}
+		body{
+		padding:0;
+		margin:0;
+		}
+		      
+        /*Using mobile first*/
+        h1{
+		font-weight:500;
+		font-size:1.4rem;
+
+		}
+		input{
+		display:none;
+		}
+		ul{
+		list-style:none;
+		}
+		ul a{
+		text-decoration:none;
+		}
+		img{
+		width:100%;
+		}
+		.header-wrapper{
+		border:0px solid red;
+		} 
+		.mobile-view{
+		display:flex;
+		flex-flow:row wrap;
+	     gap:4%;
+		justify-content:space-between;
+		padding:0.6rem;
+		border:0px solid blue;
+		background:#010216;
+		color:#fff; 
+		align-items:center;
+		}
+		.toggle-btn{
+		 display:inline-block;
+		 font-size:1.4rem;
+		 cursor:pointer;
+		}
+		.nav-container{
+		height:0;
+		border:0px solid teal;
+		overflow:hidden;
+		transition:0.5s ease;
+		background:rgba(0,0,0,0.85);
+		color:#fff;
+		}
+		input:checked + .nav-container{
+         height:100vh;
+		}
+		.nav-container a{
+		color:#fff;
+		padding:1rem;
+		display:block;
+		text-align:center;
+		text-transform:capitalize;
+		font-size:1.3rem;
+		font-weight:500;
+		}
+		.card{
+		background:#000;
+		color:goldenrod;
+		margin-bottom:1.4rem;
+		padding:1rem;
+		border-radius:8px;
+		}
+	    .card-container{
+	    padding:0.4rem;
+	    }
+
+
+	   /*media query || Tablet Device*/
+	   @media(min-width:480px){
+
+	   .card-container{
+       display:flex;
+       flex-flow:row wrap;
+       gap:4%;
+
+	   }
+	   .card{
+	   flex-basis:48%;
+	   }
+
+	   }
+
+
+      
+      /*desktop Device*/
+      @media(min-width:940px){
+      .card{
+      flex-basis:22%;
+      }
+      .toggle-btn{
+      display:none;
+      }
+      .nav-container{
+	  height:auto;
+	  overflow:visible;
+	  transition:initial;
+	}
+	 .nav-container ul{
+	  display:flex;
+	  }
+      .header-wrapper{
+      border:0px solid orange;
+      display:flex;
+      flex-flow:row wrap;
+      position:fixed;
+      width:100%;
+      }
+      .header-wrapper >*{
+      flex-basis:50%;
+      }
+      }
+       
+
+	</style>
+</head>
+<body>
+<div class="site-wrapper">
+	<header>
+		<div class="header-wrapper">
+			<div class="mobile-view">
+				<h1 class="logo">Site Logo</h1>
+				<label class="toggle-btn" for="check">&#9776;</label>
+			</div>
+
+			<input id="check" type="checkbox" name="checkbox">
+		    
+		    <nav class="nav-container">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Service</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Login</a></li>
+				<li><a href="#">Register</a></li>
+			</ul>
+		</nav>
+		</div>
+		
+	</header>
+
+	<main>
+		<section class="row">
+			<div class="banner">
+				<img src="../images/card-img5.jpg" alt="banner image">
+			</div>
+		</section>
+
+		<section class="row row-2">
+			<div class="card-container">
+				<figure class="card">
+					<p>
+					ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</figure>
+				<figure class="card">
+					<p>
+					ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</figure>
+				<figure class="card">
+					<p>
+					ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</figure>
+                <figure class="card">
+                <p>
+					ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>	
+                </figure>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>
